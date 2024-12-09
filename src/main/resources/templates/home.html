@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Spring Boot </title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+
+</head>
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/static" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/home" class="nav-link px-2 link-secondary"><H3> Home </H3></a></li>
+            <li><a href="/home" class="nav-link px-2 link-secondary"><H3> FAQ </H3></a></li>
+            <li><a href="/home" class="nav-link px-2 link-secondary"><H3> Contact </H3></a></li>
+        </ul>
+
+        <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href='/login'" >Login</button>
+            <button href="/user/list" type="button" class="btn btn-primary" onclick="window.location.href='/user/list'" >User management</button>
+        </div>
+    </header>
+</div>
+
+<body>
+</body>
+</html>
