@@ -75,7 +75,7 @@ public class UserController {
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
         User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         userRepository.delete(user);
-//        model.addAttribute("users", userRepository.findAll());
+        model.addAttribute("users", userRepository.findAll());
         return "redirect:/user/list";
     }
 }
