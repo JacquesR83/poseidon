@@ -37,7 +37,12 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Override // define authorizations per http request
+    /**
+     * Define authorizations per http request
+     * @param http
+     * @throws Exception
+     */
+    @Override //
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
@@ -51,21 +56,33 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 ;
     }
 
-
-    //Configuration of AuthenticationManagerBuilder inherited from Spring Security allowing access
+    /**
+     * Configuration of AuthenticationManagerBuilder inherited from Spring Security allowing access
+     * @param auth
+     * @throws Exception
+     */
     @Override
     protected void configure (AuthenticationManagerBuilder auth) throws Exception {
         //Links to AuthenticationService/UserDetailsService to verify DataBase content
         auth.userDetailsService(authenticationService);
     }
 
-    // Encode password
+    /**
+     * Encode password
+     * @return
+     */
     @Bean
     protected PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-// In memory users
+
+
+//    /**
+//     * Connect through in Memory User
+//     * @param auth
+//     * @throws Exception
+//     */
 //    @Override
 //    protected void configure (AuthenticationManagerBuilder auth) throws Exception {
 //        auth.inMemoryAuthentication()

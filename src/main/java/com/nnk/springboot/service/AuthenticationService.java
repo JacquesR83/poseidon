@@ -26,8 +26,13 @@ public class AuthenticationService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Check repository credentials and returns them as UserDetails
+     * @param s
+     * @return
+     * @throws UsernameNotFoundException
+     */
    @Override
-   // Check repository credentials and returns them as UserDetails
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return userRepository.findByUsername(s).orElseThrow(() -> new UsernameNotFoundException(s));
     }
