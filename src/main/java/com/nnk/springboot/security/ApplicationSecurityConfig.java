@@ -46,13 +46,14 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/login", "/css/*").permitAll()
+                .antMatchers("/login", "/css/*", "/login/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority(ADMIN.name())
                 .antMatchers(("/user/**")).hasAnyAuthority(USER.name(), ADMIN.name())
 //                .antMatchers(HttpMethod.GET, "/user/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
+//                .loginPage("/login");
                 ;
     }
 

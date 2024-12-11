@@ -15,8 +15,7 @@ import javax.validation.Valid;
 
 @Controller
 public class RatingController {
-    public RatingController() {
-    }
+
     // TODO: Inject Rating service
     RatingRepository ratingRepository;
 
